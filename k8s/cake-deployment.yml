@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+  name: cake-app
+spec: 
+  replicas: 2
+  selector: 
+    matchLabels: 
+      app: cake-app
+  template: 
+    metadata:
+      labels: 
+        app: cake-app
+    spec: 
+      containers:
+      - name: cake-container
+        image: cake-app:latest
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 5000

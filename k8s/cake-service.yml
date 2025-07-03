@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata: 
+  name: cake-app
+spec: 
+  selector:
+    app: cake-app
+  type: NodePort
+  ports:
+  - protocol: TCP 
+    port: 80
+    targetPort: 5000
+    nodePort: 30001
